@@ -1,0 +1,35 @@
+{% extends 'MyBay/base.html' %}
+
+{% block head %}
+<title>Edit Product</title>
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<p>
+{{ error }}
+
+<h1> Edit product: </h1> 
+
+{% if messages %}
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+{% endif %}
+
+
+
+<form class="form" action="" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Edit Post"/>
+</form>
+
+<br/><br/>
+
+{% endblock %}

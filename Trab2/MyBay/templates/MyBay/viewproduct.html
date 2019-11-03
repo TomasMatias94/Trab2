@@ -1,0 +1,36 @@
+{% extends 'MyBay/base.html' %}
+
+{% block head %}
+
+<title>Product</title>
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Product: {{p.title}} </h1> 
+
+<table class="c">
+
+
+	<tr>
+		<td> <img src="{{p.product_image.url}}" width=250> </td>
+		<td></td>
+		<td>
+			<p><b>Title:</b> {{p.title}} </p>
+			<p><b>Price:</b> {{p.price}}€ </p>
+			<p><b>Description:</b> {{p.descr}} </p>
+			<p><b>Country:</b> {{p.country.name}}</p>
+			<p><b>Created Date:</b> {{p.created_date}} <b>by</b>  {{p.owner.username}}</p>
+			<p><b>Category:</b> {{p.get_category_display}}</p>
+		</td>
+	</tr> 
+</table> 
+
+<br/><br/>
+
+{% endblock %}

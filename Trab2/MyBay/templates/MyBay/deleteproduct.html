@@ -1,0 +1,25 @@
+{% extends 'MyBay/base.html' %}
+
+{% block head %}
+<title>Delete Product</title>
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1> Delete Product </h1> 
+
+
+<form action="" method="POST">
+{% csrf_token %}
+<p>Are you sure you want to delete "{{ product.title }}"?
+<input type="submit" value="Delete Product"/>
+</form>
+
+<br/><br/>
+
+{% endblock %}

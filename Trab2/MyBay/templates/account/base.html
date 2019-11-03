@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+
+    
+    <meta charset="utf-8">
+    
+    <title>{% block title %}MYBAY{% endblock %}</title>
+    
+    	{% load static %}
+    	
+		<link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+  
+  </head>
+  
+  <body>
+    <header> 
+      
+      <h1>MyBay</h1>
+      
+      {% if user.is_authenticated %} 
+        <button class="head" onclick="window.location.href='/myacccount'">My Account</button>
+        <button class="head" onclick="window.location.href='/myproducts'">My Products</button>
+        <button class="head" onclick="window.location.href='/searchproducts'">Search</button>
+        <button class="head" onclick="window.location.href='/accounts/logout'">Logout</button>
+      {% else %}
+        <button class="head" onclick="window.location.href='/accounts/login'">Login</button>
+        <button class="head" onclick="window.location.href='/register'">Sign Up</button>
+      {% endif %}
+      
+    </header>
+    
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    
+    <footer align="right"> 
+    <hr>
+    <p>Ismael Jesus & Tomás Matias</p>
+    <p> Mestrado em Engenharia de Informação Geoespacial</p>
+    <p>2019/2020</p>
+    </footer>
+  </body>
+</html>

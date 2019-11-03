@@ -1,0 +1,11 @@
+[31/Oct/2019 21:54:40] INFO [django.server:124] "GET /accounts/logout/ HTTP/1.1" 200 1194
+[31/Oct/2019 21:54:42] INFO [django.server:124] "GET /myacccount/ HTTP/1.1" 200 13489
+[31/Oct/2019 21:54:42] INFO [django.server:124] "GET /myproducts/ HTTP/1.1" 200 2416
+[31/Oct/2019 21:54:42] INFO [django.server:124] "GET /media/images/Screenshot_from_2019-10-19_12-58-03.png HTTP/1.1" 304 0
+[31/Oct/2019 21:54:44] INFO [django.server:124] "GET /myacccount/ HTTP/1.1" 200 13489
+[31/Oct/2019 21:54:46] INFO [Trab2:56] adminadmin changed profile!
+[31/Oct/2019 21:54:46] INFO [django.server:124] "POST /myacccount/ HTTP/1.1" 200 13489
+[31/Oct/2019 21:54:47] INFO [django.server:124] "GET /myproducts/ HTTP/1.1" 200 2416
+[31/Oct/2019 21:54:50] INFO [django.server:124] "GET /28/edit/ HTTP/1.1" 200 13202
+[31/Oct/2019 21:54:51] INFO [Trab2:115] adminadmin changed product 28!
+[31/Oct/2019 21:54:51] INFO [django.server:124] "POST /28/edit/ HTTP/1.1" 200 13279

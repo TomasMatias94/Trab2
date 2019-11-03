@@ -1,0 +1,75 @@
+{% extends 'MyBay/base.html' %}
+
+{% block head %}
+<title>Profile</title>
+{% endblock %}
+
+{% block content %}
+
+<p></p>
+<div class="form">
+	<form method="POST" enctype="multipart/form-data" action="/searchproducts/">
+	     {% csrf_token %}
+	     
+	     <p>Name: <input type="text" name="name">
+	     
+	     My Country: 
+			  <input type="radio" name="countrypr" value="yes">  
+		</p>
+
+	     <p>Min Price: <input type="number" name="minprice" min=0 step=0.01>
+	     Max Price: <input type="number" name="maxprice" min=0 step=0.01></p>
+	     
+	     <p> After date: <input type="date" name="afterdate"> </p>
+	     
+	     Category:
+	     <select name="category" >
+		 	<option id="0" value="">---</option> 
+		 	<option id="1" value="clothes">Clothes</option> 
+		  	<option id="2" value="comics">Comics</option> 
+		  	<option id="3" value="figures">Figures</option> 
+		  	<option id="4" value="games">Games</option> 
+		  	<option id="5" value="others">Others</option> 
+		</select>
+	     
+	     </div>
+	     <br>
+	     
+	    <div clas="dive"></div>
+	     <select name="variavel" >
+		 	<option id="1" value="created_date">Created Date</option> 
+		  	<option id="2" value="price">Price</option> 
+		  	<option id="3" value="title">Name</option> 
+		</select>
+		
+	     <select name="order" >
+		 	<option id="1" value="asc">Ascending</option> 
+		  	<option id="2" value="desc">Descending</option> 
+		</select>
+		</div>
+		
+	 <input type="submit" value="Filtrar"> </input>
+	 </form>
+	 
+	 <p></p>
+	 
+<table class="a">
+
+<th> Image </th>
+<th> Title </th>
+<th> Price </th>
+<th> Created Date </th> 
+{%for p in productList%}
+	<tr>
+		<td class="b"> <img src="{{p.product_image.url}}" width=100> </td>
+		<td class="b"> {{p.title}} </td>
+		<td class="b"> {{p.price}} € </td>
+		<td class="b"> {{p.created_date}} </td>
+		<td class="b"> <p><a href="{%url 'viewproduct' p.id %}"> View </a></p>
+	</tr>
+		
+{%endfor%} 
+</table> 
+
+
+{% endblock %}

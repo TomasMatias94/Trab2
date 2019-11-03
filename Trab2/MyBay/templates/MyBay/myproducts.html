@@ -1,0 +1,37 @@
+{% extends 'MyBay/base.html' %}
+
+{% block head %}
+<title>Profile</title>
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<table class="a">
+<th> Image </th>
+<th> Title </th>
+<th> Price </th>
+<th> Created Date </th> 
+<th> <a href="{%url 'createproduct' %}"> New Product</a> </th>
+{%for p in productList%}
+	<tr>
+		<td class="b"> <img src="{{p.product_image.url}}" width=100> </td>
+		<td class="b"> {{p.title}} </td>
+		<td class="b"> {{p.price}} € </td>
+		<td class="b"> {{p.created_date}} </td>
+		<td class="b"> <p><a href="{%url 'editproduct' p.id %}"> Edit </a></p>
+			<p><a href="{%url 'deleteproduct' p.id %}"> Delete </a> </p></td> 
+	</tr>
+		
+{%endfor%} 
+</table> 
+
+
+
+{% endblock %}
